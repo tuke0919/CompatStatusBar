@@ -18,7 +18,12 @@
 * <font size = '4'>DecorView中包含3个子View:LinearLayout、View(android.R.id.navigationBarBackground)、View(android.R.id.statusBarBackground)</font><br>
 * <font size = '4'>DecorView是继承FrameLayout帧布局，所以三个子View从上到下依次是 状态栏--导航栏(有的手机没有)--LinearLayout</font><br>
 
-<font size = '5'>1. DecorView的第一个子View状态栏</font><br>
+1. DecorView的第一个子View状态栏  
+![statusbar.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/statusbar.png)  
+
+* 从图中可以看出，状态栏的高度是63px，状态栏的id是android.R.id.statusBarBackground
+
+
 
 
 
