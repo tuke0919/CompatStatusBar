@@ -1,4 +1,4 @@
-##Android-视图层级实时分析
+## Android-视图层级实时分析
 >注：
  1.笔者分析代码使用的API版本为API 26 (Android 8.0)<br>
  2.笔者使用的模拟器为Android 8.0<br>
@@ -10,12 +10,12 @@
 
 <font size = '4'>接下来，我们要对视图层级进行分析,**Android Studio**也有自带的视图分析工具 **Layout Inspector（布局检查器）**,打开方式：Tools->Android->Layout Inspector .</font><br>
 
-##正文
+## 正文
 <font size = '4'>从根视图开始分析视图层级，如下图所示：</font><br>
 ![decorview.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/decorview.png)<br>
 
-*<font size = '4'>我们可以看到视图的根布局是DecorView，宽度和高度为模拟器屏幕宽高</font><br>
-*<font size = '4'>DecorView中包含3个子View:LinearLayout、View、View</font><br>
+* <font size = '4'>我们可以看到视图的根布局是DecorView，宽度和高度为模拟器屏幕宽高</font><br>
+* <font size = '4'>DecorView中包含3个子View:LinearLayout、View、View</font><br>
 
 
 
