@@ -49,6 +49,12 @@ ContentFrameLayout的视图属性，如下图所示：<br>
 * ContentFrameLayout里的子View就是我们activity_main.xml中的视图了。  
 ![activity_main.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/activity_main.png)
 
+ActionBarContainer的视图属性，如下图所示：  
+
+![actionbar](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/action_bar_container.png)  
+
+* ActionBarContainer从名字也可以看出这是一个标题栏容器。
+* ActionBarContainer的子View中当前处于显示状态的只有一个Toolbar。
 
 
 
