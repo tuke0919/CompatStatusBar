@@ -14,8 +14,12 @@
 <font size = '4'>从根视图开始分析视图层级，如下图所示：</font><br>
 ![decorview.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/decorview.png)<br>
 
-* <font size = '4'>我们可以看到视图的根布局是DecorView，宽度和高度为模拟器屏幕宽高</font><br>
-* <font size = '4'>DecorView中包含3个子View:LinearLayout、View、View</font><br>
+* <font size = '4'>我们可以看到视图的根布局是DecorView，宽度和高度为模拟器屏幕宽高,mTop,mLeft,mRight,mBottom是相对于父布局的上下左右</font><br>
+* <font size = '4'>DecorView中包含3个子View:LinearLayout、View(android.R.id.navigationBarBackground)、View(android.R.id.statusBarBackground)</font><br>
+* <font size = '4'>DecorView是继承FrameLayout帧布局，所以三个子View从上到下依次是 状态栏--导航栏(有的手机没有)--LinearLayout</font><br>
+
+<font size = '5'>1. DecorView的第一个子View状态栏</font><br>
+
 
 
 
