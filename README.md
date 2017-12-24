@@ -18,12 +18,36 @@
 * <font size = '4'>DecorView中包含3个子View:LinearLayout、View(android.R.id.navigationBarBackground)、View(android.R.id.statusBarBackground)</font><br>
 * <font size = '4'>DecorView是继承FrameLayout帧布局，所以三个子View从上到下依次是 状态栏--导航栏(有的手机没有)--LinearLayout</font><br>
 
-1. DecorView的第一个子View状态栏  
+### 1. DecorView的第一个子View--状态栏  
 ![statusbar.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/statusbar.png)  
 
-* 从图中可以看出，状态栏的高度是63px，状态栏的id是android.R.id.statusBarBackground
+* 从图中可以看出，状态栏的高度是63px，作用是当状态栏背景，状态栏的id是android.R.id.statusBarBackground
+### 2. DecorView的第二个子View--导航栏  
+![navigationbar.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/navigation.png)  
 
+* 从图中可以看出，导航栏的高度是126px，作用是当导航栏背景，导航栏的id是android.R.id.navigationBarBackground  
+### 3. DecorView的第三个子View--LinearLayout  
+  ![linearlayout.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/linearlayout.png)  
+  * 可以看出，LinearLayout的区域是除去导航栏的区域，layout_bottomMargin=126，是把导航栏去除了。
+  * LinearLayout包含两个子View：**ViewStub和FrameLayout**  
+  * ViewStub显示的文字颜色为灰色，说明该View没有在当前视图上显示出来。 
+ViewStub的属性信息，如下图所示：  
+![viewstub](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/viewstub.png)  
+* ViewStub的getVisibility属性值为 GONE (ViewStub处于隐藏状态)  
+FrameLayout的属性信息，如下图所示：  
+![framelayout.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/framelayout.png)  
+* FrameLayout的高度值为1731px，相比于父布局LinearLayout又少了63px。
+* 从mTop属性可以知道，FrameLayout在布局时顶点坐标高度从63px开始，空出了状态栏的高度。
 
+接下来，继续分析FrameLayout的子View，FrameLayout只有一个子View：**ActionBarOverlayLayout**。ActionBarOverlayLayout的宽度和高度与FrameLayout保持一致。  
+ActionBarOverlayLayout有两个子View：**ContentFrameLayout和ActionBarContainer**  
+ContentFrameLayout的视图属性，如下图所示：<br>
+![contentframelayout.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/contentframelayout.png)
+* ContentFrameLayout的高度相比于父布局减少了147px。
+* 从layout_topMargin属性可以看出，这147px用于预留顶部边界，空出了标题栏的高度。
+* ContentFrameLayout的mID属性值为content（android.R.id.content）
+* ContentFrameLayout里的子View就是我们activity_main.xml中的视图了。  
+![activity_main.png](https://github.com/tuke0919/CompatStatusBar/blob/master/shotscreen/activity_main.png)
 
 
 
