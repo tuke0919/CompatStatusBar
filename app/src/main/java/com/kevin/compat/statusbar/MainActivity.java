@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //修改mainactivity
+        //git commit -a
+        //git add . 添加当前目录的所有文件到暂存区
     }
 }
